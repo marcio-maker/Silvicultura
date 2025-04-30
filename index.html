@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conexão Florestal Global | Educação e Negócios em Silvicultura</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Canvas para partículas -->
+    <div id="particle-canvas"></div>
+
+    <!-- Cabeçalho -->
+    <header class="cabecalho">
+        <div class="container">
+            <div class="logo">
+                <span class="logo-icone">🌲</span>
+                <h1>Conexão Florestal Global</h1>
+            </div>
+            <nav class="navegacao">
+                <ul>
+                    <li><a href="#modulos">Educação</a></li>
+                    <li><a href="#negocios">Ferramentas</a></li>
+                    <li><a href="#historias">Casos de Sucesso</a></li>
+                    <li><a href="#contato" class="botao botao-outline">Contato</a></li>
+                </ul>
+            </nav>
+            <button class="botao-menu-mobile">☰</button>
+        </div>
+    </header>
+
+    <!-- Seção Hero -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-conteudo">
+                <h2>Desbloqueie o Potencial Global da Sua Floresta</h2>
+                <p class="subtitulo">Domine a silvicultura sustentável e conecte-se com mercados internacionais através da nossa plataforma educacional e comercial.</p>
+                <div class="botoes-cta">
+                    <a href="#modulos" class="botao botao-primario">Comece a Aprender</a>
+                    <a href="#negocios" class="botao botao-secundario">Explorar Ferramentas</a>
+                </div>
+            </div>
+            <div class="hero-imagem">
+                <img src="imagens/floresta-hero.png" alt="Ilustração de silvicultura sustentável">
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção de Módulos -->
+    <section id="modulos" class="modulos">
+        <div class="container">
+            <h2 class="titulo-secao">Módulos Educacionais</h2>
+            <p class="subtitulo-secao">Desde princípios básicos até estratégias avançadas para mercados globais</p>
+            
+            <div class="grade-modulos">
+                <!-- Módulo 1 -->
+                <div class="cartao-modulo">
+                    <div class="numero-modulo">01</div>
+                    <h3>Introdução à Silvicultura</h3>
+                    <p>Fundamentos da gestão florestal sustentável e seu valor no mercado global.</p>
+                    <a href="#" class="botao botao-pequeno">Saiba Mais</a>
+                </div>
+                
+                <!-- Módulo 2 -->
+                <div class="cartao-modulo">
+                    <div class="numero-modulo">02</div>
+                    <h3>Espécies de Alto Valor</h3>
+                    <p>Conheça as árvores mais valiosas no mercado internacional e como cultivá-las.</p>
+                    <a href="#" class="botao botao-pequeno">Saiba Mais</a>
+                </div>
+                
+                <!-- Módulo 3 -->
+                <div class="cartao-modulo">
+                    <div class="numero-modulo">03</div>
+                    <h3>Certificações Globais</h3>
+                    <p>Prepare-se para exportar com os selos internacionais mais reconhecidos.</p>
+                    <a href="#" class="botao botao-pequeno">Saiba Mais</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Mapa de Demanda -->
+    <section id="mapa" class="mapa-demanda">
+        <div class="container">
+            <h2 class="titulo-secao">Mapa de Demanda Global</h2>
+            <p class="subtitulo-secao">Visualize regiões com maior potencial para seus produtos florestais</p>
+            <div class="mapa-container">
+                <canvas id="mapa-global"></canvas>
+                <div class="legenda-mapa">
+                    <div class="item-legenda">
+                        <span class="cor-legenda" style="background-color: #2D6A4F;"></span>
+                        <span>Demanda Moderada</span>
+                    </div>
+                    <div class="item-legenda">
+                        <span class="cor-legenda" style="background-color: #D4AF37;"></span>
+                        <span>Demanda Alta</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Calculadora -->
+    <section id="calculadora" class="calculadora">
+        <div class="container">
+            <h2 class="titulo-secao">Calculadora de Retorno</h2>
+            <p class="subtitulo-secao">Calcule o potencial do seu investimento florestal em diferentes mercados</p>
+            
+            <div class="calculadora-container">
+                <div class="entradas-calculadora">
+                    <div class="grupo-entrada">
+                        <label for="especie">Espécie Florestal</label>
+                        <select id="especie">
+                            <option value="teca">Teca</option>
+                            <option value="mogno">Mogno</option>
+                            <option value="eucalipto">Eucalipto</option>
+                            <option value="bambu">Bambu</option>
+                        </select>
+                    </div>
+                    
+                    <div class="grupo-entrada">
+                        <label for="volume">Volume (m³)</label>
+                        <input type="number" id="volume" min="1" value="100">
+                    </div>
+                    
+                    <div class="grupo-entrada">
+                        <label for="certificacao">Certificação</label>
+                        <select id="certificacao">
+                            <option value="nenhuma">Nenhuma</option>
+                            <option value="fsc">FSC</option>
+                            <option value="cerflor">CERFLOR</option>
+                        </select>
+                    </div>
+                    
+                    <button id="calcular" class="botao botao-primario">Calcular Retorno</button>
+                </div>
+                
+                <div class="resultados-calculadora">
+                    <div class="resultado-moeda">
+                        <span class="moeda">USD</span>
+                        <span id="resultado-usd" class="valor">-</span>
+                    </div>
+                    <div class="resultado-moeda">
+                        <span class="moeda">EUR</span>
+                        <span id="resultado-eur" class="valor">-</span>
+                    </div>
+                    <div class="resultado-moeda">
+                        <span class="moeda">CNY</span>
+                        <span id="resultado-cny" class="valor">-</span>
+                    </div>
+                    <div class="observacao">
+                        <small>*Valores estimados para mercados internacionais</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Chatbot -->
+    <section class="chatbot-secao">
+        <div class="container">
+            <div class="chatbot-container">
+                <div class="chatbot-conteudo">
+                    <h3>Pronto para conectar-se com compradores globais?</h3>
+                    <p>Nosso assistente pode ajudar a avaliar se seus produtos atendem aos padrões internacionais.</p>
+                </div>
+                <button id="abrir-chatbot" class="botao botao-dourado">
+                    Conversar com Assistente
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rodapé -->
+    <footer class="rodape">
+        <div class="container">
+            <div class="info-rodape">
+                <div class="logo-rodape">
+                    <span>🌲</span>
+                    <span>Conexão Florestal Global</span>
+                </div>
+                <p>Plataforma integrada de educação e negócios em silvicultura sustentável.</p>
+            </div>
+            
+            <div class="links-rodape">
+                <div class="coluna-links">
+                    <h4>Educação</h4>
+                    <ul>
+                        <li><a href="#">Módulos</a></li>
+                        <li><a href="#">Tutoriais</a></li>
+                        <li><a href="#">Certificações</a></li>
+                    </ul>
+                </div>
+                
+                <div class="coluna-links">
+                    <h4>Negócios</h4>
+                    <ul>
+                        <li><a href="#">Calculadora</a></li>
+                        <li><a href="#">Mapa de Demanda</a></li>
+                        <li><a href="#">Conectar Compradores</a></li>
+                    </ul>
+                </div>
+                
+                <div class="coluna-links">
+                    <h4>Empresa</h4>
+                    <ul>
+                        <li><a href="#">Sobre Nós</a></li>
+                        <li><a href="#">Contato</a></li>
+                        <li><a href="#">Termos</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>© 2023 Conexão Florestal Global. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Chatbot Flutuante -->
+    <div id="chatbot" class="chatbot-flutuante">
+        <div class="chatbot-cabecalho">
+            <h4>Assistente de Negócios</h4>
+            <button id="fechar-chatbot" class="botao-fechar">×</button>
+        </div>
+        <div class="chatbot-mensagens">
+            <div class="mensagem mensagem-bot">
+                <p>Olá! Como posso ajudar você hoje?</p>
+            </div>
+        </div>
+        <div class="chatbot-entrada">
+            <input type="text" placeholder="Digite sua mensagem...">
+            <button class="botao-enviar">Enviar</button>
+        </div>
+    </div>
+
+    <script src="three.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
